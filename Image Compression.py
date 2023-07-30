@@ -1,5 +1,6 @@
-# imgcom.py
+# compress.py
 import os
+import sys
 from PIL import Image
 
 def compress_image(image_path, quality, max_size):
@@ -16,7 +17,7 @@ def compress_image(image_path, quality, max_size):
     return output_path
 
 def main():
-    file_name = input("Enter the image file name: ")
+    file_name = sys.argv[1]  # The first argument is the image file name
     compress_upto = int(input("Enter the compression quality (1-100): "))
     max_size = float(input("Enter the desired maximum size in KB: "))
     output_file = compress_image(file_name, compress_upto, max_size)
